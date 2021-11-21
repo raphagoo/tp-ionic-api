@@ -15,12 +15,7 @@ export const UserSchema = new Schema({
     password: {
         type: String,
         required: 'Password required'
-    },
-    races:[{
-        type: ObjectId,
-        ref: 'Race',
-        autopopulate: true
-    }]
+    }
 });
 
 UserSchema.pre('save', function(next) {

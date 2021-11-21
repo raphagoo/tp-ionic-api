@@ -2,6 +2,8 @@ import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
 import { UserSchema } from "../models/userModel.js";
 import bcrypt from 'bcrypt';
+import https from 'https';
+const CLIENT_TOKEN = 'snERP8Zl8xvQorLhQs_-uUGVx0OXl2bR_Ng1u2JPURL-pnYgIQFoURCVV3gTH6M7';
 
 const User = mongoose.model('User', UserSchema);
 
