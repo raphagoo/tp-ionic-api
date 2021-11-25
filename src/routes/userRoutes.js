@@ -1,4 +1,4 @@
-import { createUser, login, listUsers, getUser, updateUser, deleteUser } from "../controllers/userController.js";
+import { createUser, login, listUsers, getUser, updateUser, deleteUser, likeSong } from "../controllers/userController.js";
 
 export const userRoutes = (app) => {
     app.route('/user/register')
@@ -18,4 +18,7 @@ export const userRoutes = (app) => {
 
     app.route('/user/:id')
         .delete(deleteUser);
+
+    app.route('/user/like')
+        .post(likeSong);
 }

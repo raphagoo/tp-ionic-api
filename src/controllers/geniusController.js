@@ -1,5 +1,6 @@
 import { verifyJwt } from '../services/jwtVerification.js';
-const CLIENT_TOKEN = 'snERP8Zl8xvQorLhQs_-uUGVx0OXl2bR_Ng1u2JPURL-pnYgIQFoURCVV3gTH6M7';
+import { getSongById } from 'genius-lyrics-api';
+const CLIENT_TOKEN = 'eyniE5IjwThnas75VN8w0oCwESDZXu4rhA-FIfpN41ZJi6Vr2TwpI8RJsQA2frI2';
 import https from 'https'
 
 export const search = (req, res) => {
@@ -9,7 +10,7 @@ export const search = (req, res) => {
             hostname: 'api.genius.com',
             port: 443,
             method: 'GET',
-            path: '/search?q=' + req.query.term,
+            path: '/search?q=' + encodeURIComponent(req.query.term),
             headers: {
                 Authorization: 'Bearer ' + CLIENT_TOKEN
             }
@@ -27,10 +28,26 @@ export const search = (req, res) => {
             res.sendStatus(500)
         })
 
-        request.end()
+        request.end();
+        output = '';
     }
     else{
-        res.sendStatus(403);
+        res.sendStatus(401);
+    }
+};
+
+export const getSong = (req, res) => {
+    if(verifyJwt(req) === true){
+        getSongById(req.params.id, CLIENT_TOKEN)
+            .then(song => {
+                res.status(200).send(song)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+    else{
+        res.sendStatus(401);
     }
 };
 

@@ -58,11 +58,11 @@ export const login = (req, res) => {
                     res.status(200).json(response)
                 } else {
                     res.sendStatus(404)
-                } 
+                }
               });
         }
     });
-   
+
 };
 
 export const updateUser = (req, res) => {
@@ -94,4 +94,18 @@ export const deleteUser = (req, res) => {
             }
         }
     });
+};
+
+export const likeSong = (req, res) => {
+    console.log(req.body.songId)
+    User.findOneAndUpdate(
+        { _id: req.body.userId },
+        { $addToSet: { likes: req.body.songId  } }, {useFindAndModify: false, new: true},
+        function (error, success) {
+            if (error) {
+                console.log(error);
+            } else {
+                res.status(200).send(success)
+            }
+        });
 };

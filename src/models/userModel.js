@@ -15,7 +15,10 @@ export const UserSchema = new Schema({
     password: {
         type: String,
         required: 'Password required'
-    }
+    },
+    likes: [{
+        type: Number
+    }]
 });
 
 UserSchema.pre('save', function(next) {
