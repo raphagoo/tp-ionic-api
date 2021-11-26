@@ -97,10 +97,22 @@ export const deleteUser = (req, res) => {
 };
 
 export const likeSong = (req, res) => {
-    console.log(req.body.songId)
     User.findOneAndUpdate(
         { _id: req.body.userId },
-        { $addToSet: { likes: req.body.songId  } }, {useFindAndModify: false, new: true},
+        { $addToSet: { likes: req.body.song  } }, {useFindAndModify: false, new: true},
+        function (error, success) {
+            if (error) {
+                console.log(error);
+            } else {
+                res.status(200).send(success)
+            }
+        });
+};
+
+export const unlikeSong = (req, res) => {
+    User.findOneAndUpdate(
+        { _id: req.body.userId },
+        { $pull: { likes: req.body.song  } }, {useFindAndModify: false, new: true},
         function (error, success) {
             if (error) {
                 console.log(error);

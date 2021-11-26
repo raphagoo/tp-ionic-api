@@ -17,7 +17,9 @@ export const UserSchema = new Schema({
         required: 'Password required'
     },
     likes: [{
-        type: Number
+        id : Number,
+        title : String,
+        albumArt: String
     }]
 });
 

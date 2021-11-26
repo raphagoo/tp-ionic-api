@@ -1,4 +1,4 @@
-import { createUser, login, listUsers, getUser, updateUser, deleteUser, likeSong } from "../controllers/userController.js";
+import { createUser, login, listUsers, getUser, updateUser, deleteUser, likeSong, unlikeSong } from "../controllers/userController.js";
 
 export const userRoutes = (app) => {
     app.route('/user/register')
@@ -10,6 +10,12 @@ export const userRoutes = (app) => {
     app.route('/user/list')
         .get(listUsers);
 
+    app.route('/user/like')
+        .put(likeSong);
+
+    app.route('/user/unlike')
+        .put(unlikeSong);
+
     app.route('/user/:id')
         .get(getUser);
 
@@ -18,7 +24,4 @@ export const userRoutes = (app) => {
 
     app.route('/user/:id')
         .delete(deleteUser);
-
-    app.route('/user/like')
-        .post(likeSong);
 }
