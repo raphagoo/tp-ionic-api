@@ -24,7 +24,7 @@ export const autoIncrement = import('mongoose-auto-increment');
 
 // mongoose connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://raphagoo:kakashi#13@cluster0.q4kkc.mongodb.net/tp-ionic?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://raphagoo:kakashi%2313@cluster0.q4kkc.mongodb.net/tp-ionic?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }, error => {
