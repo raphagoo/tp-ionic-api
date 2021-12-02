@@ -24,13 +24,13 @@ export const autoIncrement = import('mongoose-auto-increment');
 
 // mongoose connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/tp-ionic', {
+mongoose.connect('mongodb+srv://raphagoo:kakashi#13@cluster0.q4kkc.mongodb.net/tp-ionic?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }, error => {
     if(error) {
         console.log(error);
-        process.exit(1);       
+        process.exit(1);
     }
 });
 
