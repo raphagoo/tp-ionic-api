@@ -1,0 +1,5 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target" : { "namespace": "android_app", "package_name": "com.tp-ionic-raphago.app",
+    "sha256_cert_fingerprints": ["A8:CE:B1:90:A4:8F:2F:FF:F6:A2:AA:68:19:F4:B6:BB:5C:26:EE:66:BB:A7:7B:D5:3A:A4:83:1D:AE:47:CE:B2"] }
+}]
