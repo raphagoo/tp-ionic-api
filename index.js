@@ -9,6 +9,7 @@ import mongoose from 'mongoose';
 
 import { userRoutes } from "./src/routes/userRoutes.js";
 import { geniusRoutes } from "./src/routes/geniusRoutes.js";
+import {assetRoutes} from "./src/routes/assetRoutes.js";
 
 
 app.use(express.urlencoded({extended: true}));
@@ -37,6 +38,7 @@ mongoose.connect('mongodb+srv://raphagoo:kakashi%2313@cluster0.q4kkc.mongodb.net
 // Routes initialisation
 userRoutes(app);
 geniusRoutes(app);
+assetRoutes(app);
 
 
 server.listen(process.env.PORT || 3000,
