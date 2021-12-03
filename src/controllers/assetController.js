@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 export const getAssetFile = (req, res) => {
-    const filePath = "./.well-known/assetslink.json"; // or any file format
+    const filePath = "./.well-known/assetlinks.json"; // or any file format
 
     fs.readFile(filePath, (err, data) => {
         if (err) throw err;
