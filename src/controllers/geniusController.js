@@ -83,13 +83,11 @@ export const stream = (req, res) => {
     // Retrieve an access token.
     spotifyApi.clientCredentialsGrant().then(
         function(data) {
-            console.log('The access token expires in ' + data.body['expires_in']);
-            console.log('The access token is ' + data.body['access_token']);
 
             // Save the access token so that it's used in future calls
             spotifyApi.setAccessToken(data.body['access_token']);
             spotifyApi.getTrack(req.params.id).then(response => {
-                console.log(response.body)
+                res.status(200).json(response.body.preview_url)
             })
         },
         function(err) {
