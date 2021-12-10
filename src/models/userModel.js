@@ -2,6 +2,7 @@
 import mongoose from "mongoose";
 import { default as autopopulate } from "mongoose-autopopulate";
 let Schema = mongoose.Schema;
+import { default as validator } from "mongoose-unique-validator";
 import bcrypt from 'bcrypt';
 let SALT_WORK_FACTOR = 10;
 
@@ -10,7 +11,8 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 export const UserSchema = new Schema({
     username: {
         type: String,
-        required: 'Username required'
+        required: 'Username required',
+        validate: true
     },
     password: {
         type: String,
@@ -52,3 +54,4 @@ UserSchema.methods.comparePassword = function(candidatePassword, cb) {
 };
 
 UserSchema.plugin(autopopulate);
+UserSchema.plugin(validator);
