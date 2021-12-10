@@ -1,17 +1,19 @@
-# Node starter
+# TP-ionic-api
 
-[![Dependency Status](https://david-dm.org/raphagoo/runningManAPI/status.svg)](https://david-dm.org/raphagoo/runningManAPI#info=dependencies) 
-[![devDependency Status](https://david-dm.org/raphagoo/runningManAPI/dev-status.svg)](https://david-dm.org/raphagoo/runningManAPI#info=devDependencies)
+[![Node.js CI](https://github.com/raphagoo/tp-ionic-api/actions/workflows/node.js.yml/badge.svg)](https://github.com/raphagoo/tp-ionic-api/actions/workflows/node.js.yml)
 
 Agostini Raphael
 
+Hosted on Heroku at : https://tp-ionic-api.herokuapp.com/
+
 ## Description
 
-My own node starter, to start off quickly a REST API with login and register endpoints as well as JWT token implementation
+API for Ionic TP, including link to Genius API to retrieve lyrics and more song informations.
 
-The creation of race is an example, it can be replaced with really any request made to the API
+Authentication system with a JWT is also implemented.
 
 ## Project setup
 
 - Run npm install
-- Run npm start
+- Run npm start (production mode)
+- Run npm run dev (development mode)
