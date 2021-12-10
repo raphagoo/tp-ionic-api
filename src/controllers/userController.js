@@ -11,7 +11,11 @@ export const createUser = (req, res) => {
     let newUser = new User(req.body);
     newUser.save((err, user) => {
         if(err) {
-            res.status(400).send(err);
+            if(err.errors.username.properties.type === 'unique'){
+                res.status(403).send(err);
+            } else {
+                res.status(400).send(err);
+            }
         } else {
             //let token = jwt.sign({exp: Math.floor(Date.now() / 1000) + (60 * 60), data: user}, 'mySuperSecrett');
             //let response = {user: user,token: token}
