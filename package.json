@@ -17,7 +17,7 @@
     "express": "^4.17.1",
     "genius-lyrics-api": "git+https://github.com/raphagoo/genius-lyrics-api.git#master",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.1.1",
+    "mongoose": "^6.2.2",
     "mongoose-auto-increment": "^5.0.1",
     "mongoose-autopopulate": "^0.16.0",
     "mongoose-unique-validator": "^3.0.0",
