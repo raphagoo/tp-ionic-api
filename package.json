@@ -19,7 +19,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.1.1",
     "mongoose-auto-increment": "^5.0.1",
-    "mongoose-autopopulate": "^0.16.0",
+    "mongoose-autopopulate": "^0.16.1",
     "mongoose-unique-validator": "^3.0.0",
     "spotify-web-api-node": "^5.0.2"
   },
